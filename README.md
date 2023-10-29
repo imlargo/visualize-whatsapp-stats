@@ -6,6 +6,12 @@ Aplicacion web para la visualizacion de estadisticas y datos relacionados a chat
 
 Objetivos (En desarrollo)
 - Ver mensajes por persona
+- Emojis mas usados (en general y por usuario)
+- Palabras mas usadas
+- Total mensajes
+- Mensajes por dia sem u hora?
+- Dias con mas mensajes
+- 
 - ...en proceso...
 
 ---
