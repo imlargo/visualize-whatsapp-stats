@@ -1,3 +1,5 @@
+let bigData = [];
+
 function getFile(event) {
     const input = event.target
     if ('files' in input && input.files.length > 0) {
@@ -9,9 +11,9 @@ function getFile(event) {
 
 function placeFileContent(target, file) {
     readFileContent(file).then(content => {
-        const data = loadData(content)
-        target.value = `Cargado con texto: ${data.length} mensajes`;
-        console.log(contarMensajes(data));
+        bigData = loadData(content);
+        console.log("Data cargada")
+        //target.value = `Cargado con texto: ${data.length} mensajes`;
     }).catch(error => console.log(error))
 }
 
@@ -23,6 +25,5 @@ function readFileContent(file) {
         reader.readAsText(file)
     })
 }
-
 
 document.getElementById('input-file').addEventListener('change', getFile);

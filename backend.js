@@ -46,6 +46,7 @@ function loadData(rawText) {
 function contarMensajes(data) {
     const Objeto = {};
     for (const msg of data) {
+        console.log(msg)
         const telefono = msg.telefono;
         Objeto[telefono] = (Objeto[telefono] || 1) + 1;
     }
