@@ -22,22 +22,36 @@
 </head>
 
 <header class="sticky-top">
-    <div class="row row-cols-auto p-2" style="background-color: #a229ff;">
+    <div class="row row-cols-auto p-2" style="background-color: #7b0b7d;">
+        
+        <div class="col">
+            <label for="input-file" class="text-white">Seleccionar archivo:</label><br>
+            <input type="file" id="input-file" class="btn btn-outline-success text-white">
+        </div>
 
         <div class="col">
             <div class="Visor de capas">
-                <a class="dropdown-item ms-3" id="test" axis="y" href="#" onclick="añadirGrafico(this)">
+                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
                     Generar
                 </a>
+                
+                <ul class="dropdown-menu shadow rounded ms-3">
 
-                <label for="input-file">Specify a file:</label><br>
-                <input type="file" id="input-file">
+                    <li>
+                        <a class="dropdown-item ms-3" id="usuario" label="msg usuario" axis="y" href="#"
+                            onclick="añadirGrafico(this)">
+                            Mensajes por telefono
+                        </a>
+                    </li>
 
+                </ul>
             </div>
-
         </div>
+
     </div>
     <!-- barra de menu de mapas -->
+
 </header>
 
 

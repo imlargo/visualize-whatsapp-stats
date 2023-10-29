@@ -23,7 +23,6 @@ function getColor(color = false) {
 }
 
 
-
 function addElements(tipo) {
     document.getElementById("tlGrafico").textContent = `Datos ${tipo}`;
 
@@ -40,8 +39,6 @@ function AddGraph(label, axis) {
     addElements(label);
     //Etiquetas Unicas ordenadas
     const tempData = contarMensajes(bigData);
-
-    console.log(tempData);
     
     const tagsOrdenadas = Object.keys(tempData);
     //Inicio la busqueda por Clave y cuento totales por año
