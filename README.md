@@ -13,5 +13,5 @@ Objetivos (En desarrollo)
 ### Tools used
 
 <a href="https://skillicons.dev">
-  <img src="https://skillicons.dev/icons?i=js,html,css,git,github,vscode&theme=dark" />
+  <img src="https://skillicons.dev/icons?i=js,html,css,vercel,git,github,vscode&theme=dark" />
 </a>
