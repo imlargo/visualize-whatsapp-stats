@@ -11,7 +11,6 @@ Objetivos (En desarrollo)
 - Total mensajes
 - Mensajes por dia sem u hora?
 - Dias con mas mensajes
-- 
 - ...en proceso...
 
 ---
