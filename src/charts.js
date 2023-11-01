@@ -16,7 +16,7 @@ const dataFunctions = {
             Objeto[fecha] = (Objeto[fecha] || 1) + 1;
         }
     
-        return obtenerTopNValores(Objeto, 30);
+        return Objeto;
     },
 
     "contarHora" : (bigData) => {
@@ -26,8 +26,20 @@ const dataFunctions = {
             Objeto[hora] = (Objeto[hora] || 1) + 1;
         }
     
+        return Objeto;
+    },
+
+    "contarMultimedia" : (bigData) => {
+        const filtrado = bigData.filter(msg => msg.mensaje == "<Multimedia omitido>")
+        const Objeto = {};
+        for (const msg of filtrado) {
+            const telefono = msg.telefono;
+            Objeto[telefono] = (Objeto[telefono] || 1) + 1;
+        }
+    
         return obtenerTopNValores(Objeto, 30);
     }
+
 
 }
 
