@@ -16,7 +16,7 @@ const dataFunctions = {
             Objeto[fecha] = (Objeto[fecha] || 1) + 1;
         }
     
-        return Objeto;
+        return obtenerTopNValores(Objeto, 30);
     },
 
     "contarHora" : (bigData) => {
