@@ -9,7 +9,7 @@ function extraerInformacion(rawText) {
         const hora = fechaHora[1]
 
         // Expresión regular para extraer el número de teléfono
-        const telefonoRegex = /\. m\. - (.+): /;
+        const telefonoRegex = /\. m\. - (.*?): /;
         const telefonoMatch = texto.match(telefonoRegex);
         const telefono = telefonoMatch ? telefonoMatch[1] : "null";
 
@@ -24,6 +24,7 @@ function extraerInformacion(rawText) {
             telefono,
             mensaje,
         };
+
     } catch (error) {
         return null
     }
@@ -46,9 +47,9 @@ function obtenerTopNValores(diccionario, n) {
 
 
 function loadData(rawText) {
-    const mensajes = rawText.split("\n")
+    const mensajes = (rawText.split("\n"))
     const rawData = mensajes.map((msg) => extraerInformacion(msg))
-    const data = rawData.filter(msg => msg != null)
+    const data = rawData.filter(msg => msg != null && msg.telefono != "null")
     return data;
 }
 
