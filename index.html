@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>Test</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./src/misc.js" defer></script>
     <script src="./src/backend.js" defer></script>
     <script src="./src/frontend.js" defer></script>
     <script src="./src/charts.js" defer></script>
@@ -39,9 +40,23 @@
                 <ul class="dropdown-menu shadow rounded ms-3">
 
                     <li>
-                        <a class="dropdown-item ms-3" id="usuario" label="msg usuario" axis="y" href="#"
+                        <a class="dropdown-item ms-3" id="contarMensajes" label="Mensajes por usuario" axis="y" href="#"
                             onclick="añadirGrafico(this)">
                             Mensajes por telefono
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item ms-3" id="contarFecha" label="Mensajes por fecha" axis="y" href="#"
+                            onclick="añadirGrafico(this)">
+                            Mensajes por fecha
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item ms-3" id="contarHora" label="Mensajes por hora" axis="y" href="#"
+                            onclick="añadirGrafico(this)">
+                            Mensajes por hora
                         </a>
                     </li>
 

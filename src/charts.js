@@ -1,3 +1,37 @@
+const graphs = {
+    "contarMensaje" : () => {
+        const Objeto = {};
+        for (const msg of bigData) {
+            const telefono = msg.telefono;
+            Objeto[telefono] = (Objeto[telefono] || 1) + 1;
+        }
+    
+        return obtenerTopNValores(Objeto, 30);
+    },
+
+    "contarFecha" : () => {
+        const Objeto = {};
+        for (const msg of bigData) {
+            const fecha = msg.fecha;
+            Objeto[fecha] = (Objeto[fecha] || 1) + 1;
+        }
+    
+        return obtenerTopNValores(Objeto, 30);
+    },
+
+    "contarHora" : () => {
+        const Objeto = {};
+        for (const msg of bigData) {
+            const hora = msg.hora;
+            Objeto[hora] = (Objeto[hora] || 1) + 1;
+        }
+    
+        return obtenerTopNValores(Objeto, 30);
+    }
+
+}
+
+
 
 //Retorna -- un solo color si no se da argumentos -- o un array de colores del tamaño q le especifiquemos 
 function getColor(color = false) {
@@ -22,9 +56,8 @@ function getColor(color = false) {
     }
 }
 
-
 function addElements(tipo) {
-    document.getElementById("tlGrafico").textContent = `Datos ${tipo}`;
+    document.getElementById("tlGrafico").textContent = `${tipo}`;
 
     const elemento = document.getElementById("grafica")
     elemento.remove();
@@ -35,14 +68,14 @@ function addElements(tipo) {
     document.getElementById("DivGraficos").appendChild(newCanvas);
 }
 
-function AddGraph(label, axis) {
+function AddGraph(label, axis, type) {
     addElements(label);
     //Etiquetas Unicas ordenadas
-    const tempData = contarMensajes(bigData);
+    const tempData = graphsData[type]();
     
     const tagsOrdenadas = Object.keys(tempData);
     //Inicio la busqueda por Clave y cuento totales por año
-    const Conteos = tagsOrdenadas.map(telefono => tempData[telefono]);
+    const Conteos = tagsOrdenadas.map(key => tempData[key]);
     
     //Configurar etiquetas y datos
     const datax = {
@@ -71,7 +104,8 @@ function AddGraph(label, axis) {
 function añadirGrafico(element) {
     AddGraph(
         element.getAttribute("label"),
-        element.getAttribute("axis")
+        element.getAttribute("axis"),
+        element.getAttribute("id")
     );
 }
 

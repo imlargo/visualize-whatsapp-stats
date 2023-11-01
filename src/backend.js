@@ -31,35 +31,9 @@ function extraerInformacion(rawText) {
 
 }
 
-function obtenerTopNValores(diccionario, n) {
-    const matrizClaveValor = Object.entries(diccionario);
-
-    matrizClaveValor.sort((a, b) => b[1] - a[1]);
-
-    const subDiccionario = {};
-    for (let i = 0; i < n && i < matrizClaveValor.length; i++) {
-        const [clave, valor] = matrizClaveValor[i];
-        subDiccionario[clave] = valor;
-    }
-
-    return subDiccionario;
-}
-
-
 function loadData(rawText) {
     const mensajes = (rawText.split("\n"))
     const rawData = mensajes.map((msg) => extraerInformacion(msg))
     const data = rawData.filter(msg => msg != null && msg.telefono != "null")
     return data;
-}
-
-function contarMensajes(data) {
-    const Objeto = {};
-    for (const msg of data) {
-        console.log(msg)
-        const telefono = msg.telefono;
-        Objeto[telefono] = (Objeto[telefono] || 1) + 1;
-    }
-
-    return obtenerTopNValores(Objeto, 30);;
 }
