@@ -26,7 +26,7 @@ const dataFunctions = {
             Objeto[hora] = (Objeto[hora] || 1) + 1;
         }
     
-        return Objeto;
+        return obtenerTopNValores(Objeto, 26);
     },
 
     "contarMultimedia" : (bigData) => {
