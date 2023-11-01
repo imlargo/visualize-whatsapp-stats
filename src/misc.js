@@ -11,3 +11,27 @@ function obtenerTopNValores(diccionario, n) {
 
     return subDiccionario;
 }
+
+
+//Retorna -- un solo color si no se da argumentos -- o un array de colores del tamaño q le especifiquemos 
+function getColor(color = false) {
+    if (color) {
+        //Si se le dice cuantos colores, regresa una lista de colores
+        const colors = []
+        for (let i = 0; i < color; i++) {
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color = color + ("0123456789ABCDEF")[Math.floor(Math.random() * 16)];
+            }
+            colors.push(color)
+        }
+        return colors
+    } else {
+        //Si no se le da ningun parametro a la funcion, regresa un solo color
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+            color = color + ("0123456789ABCDEF")[Math.floor(Math.random() * 16)];
+        }
+        return color
+    }
+}
