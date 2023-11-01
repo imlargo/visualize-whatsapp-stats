@@ -1,4 +1,4 @@
-const graphs = {
+const dataFunctions = {
     "contarMensaje" : (bigData) => {
         const Objeto = {};
         for (const msg of bigData) {
@@ -46,7 +46,7 @@ function addElements(tipo) {
 function AddGraph(label, axis, type) {
     addElements(label);
     //Etiquetas Unicas ordenadas
-    const tempData = (graphsData[type])(bigData);
+    const tempData = (dataFunctions[type])(bigData);
     
     const tagsOrdenadas = Object.keys(tempData);
     //Inicio la busqueda por Clave y cuento totales por año
