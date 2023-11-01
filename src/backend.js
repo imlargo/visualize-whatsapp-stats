@@ -6,7 +6,7 @@ function extraerInformacion(rawText) {
         const fechaHoraMatch = texto.match(fechaHoraRegex);
         const fechaHora = fechaHoraMatch ? fechaHoraMatch[1].split(", ") : "null";
         const fecha = fechaHora[0]
-        const hora = fechaHora[1]
+        const hora = roundHora(fechaHora[1])
 
         // Expresión regular para extraer el número de teléfono
         const telefonoRegex = /\. m\. - (.*?): /;

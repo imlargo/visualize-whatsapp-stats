@@ -35,3 +35,9 @@ function getColor(color = false) {
         return color
     }
 }
+
+function roundHora(hora) {
+    const regex = /(.+):\d\d (a\. m\. |p\. m\.)/;
+    const fechaHora = texto.match(regex);
+    return `${fechaHora[0]}:00 ${fechaHora[1]}`
+}
