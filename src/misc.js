@@ -44,3 +44,7 @@ function roundHora(raw) {
     
     return `${hora}:00 ${formato}`
 }
+
+function getEmojis(raw) {
+  return raw.match(/[\p{Emoji}\u200d]+/gu)[1] || [];
+}

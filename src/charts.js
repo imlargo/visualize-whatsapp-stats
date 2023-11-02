@@ -38,8 +38,18 @@ const dataFunctions = {
         }
     
         return obtenerTopNValores(Objeto, 30);
-    }
+    },
 
+    "contarEmoji" : (bigData) => {
+        const emojis = bigData.map(msg => getEmojis(msg.mensaje))
+        console.log(emojis)
+        const Objeto = {};
+        for (const emoji of emojis) {
+            Objeto[emoji] = (Objeto[emojis] || 1) + 1;
+        }
+
+        return obtenerTopNValores(Objeto, 30);
+    }
 
 }
 
