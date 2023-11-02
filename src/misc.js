@@ -41,10 +41,11 @@ function roundHora(raw) {
     const regexFormato = / (a\. m\.|p\. m\.)/
     const hora = raw.match(regexHora)[1];
     const formato = raw.match(regexFormato)[1];
-    
+
     return `${hora}:00 ${formato}`
 }
 
 function getEmojis(raw) {
-  return raw.match(/[\p{Emoji}\u200d]+/gu)[1] || [];
+    const match = raw.match(/\p{Emoji}/gu);
+    return match ? match[1] : "Nn";
 }
