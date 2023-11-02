@@ -2,7 +2,7 @@ function extraerInformacion(rawText) {
     try {
         const texto = rawText.replaceAll(" ", " ")
         // Expresión regular para extraer la fecha y la hora
-        const fechaHoraRegex = /^(.+) - /;
+        const fechaHoraRegex = /^(.*?) - /;
         const fechaHoraMatch = texto.match(fechaHoraRegex);
         const fechaHora = fechaHoraMatch ? fechaHoraMatch[1].split(", ") : "null";
         const fecha = fechaHora[0]
