@@ -136,10 +136,7 @@ p.baner {
     margin-left: 5%;
 }
 
-body {
-    background-color: #fefef9;
-    font-family: "Ancizar sans", Tahoma, Geneva, sans-serif;
-}
+
 
 .vr {
     display: inline-block;
@@ -177,4 +174,10 @@ body {
     background-color: white;
     background-repeat: no-repeat;
     background-position: 12px 11px;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: "FreeMono", monospace;
+    color: #000000!important;
 }
