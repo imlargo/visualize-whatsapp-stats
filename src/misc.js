@@ -50,8 +50,6 @@ function getEmojis(raw) {
     return match ? match[1] : "Nn";
 }
 
-let bigData = [];
-
 function loadFile(input) {
     /*
     * Cargar configuracion de formato del mapa y capas

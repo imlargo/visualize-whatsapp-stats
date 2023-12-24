@@ -62,7 +62,7 @@ function addElements(tipo) {
     const newCanvas = document.createElement("canvas");
     newCanvas.id = "grafica"
 
-    document.getElementById("DivGraficos").appendChild(newCanvas);
+    document.getElementById("graphContainer").appendChild(newCanvas);
 }
 
 function AddGraph(label, axis, type) {
@@ -98,7 +98,8 @@ function AddGraph(label, axis, type) {
     );
 }
 
-function añadirGrafico(element) {
+function añadirGrafico(id) {
+    const element = document.getElementById(id);
     AddGraph(
         element.getAttribute("label"),
         element.getAttribute("axis"),
