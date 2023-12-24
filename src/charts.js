@@ -41,24 +41,33 @@ const dataFunctions = {
     },
 
     "contarEmoji" : (bigData) => {
-        const emojis = bigData.map(msg => getEmojis(msg.mensaje))
-        console.log(emojis)
+        // Extraer todos los emojis de los mensajes y guardarlos en un array
+        const allEmojis = bigData.flatMap(
+            msg => msg.mensaje.match(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g) || []
+        );
+        // Contar cuantas veces se repite cada emoji
         const Objeto = {};
-        for (const emoji of emojis) {
-            Objeto[emoji] = (Objeto[emojis] || 1) + 1;
+        for (const emoji of allEmojis) {
+            Objeto[emoji] = (Objeto[emoji] || 1) + 1;
         }
-
-        return obtenerTopNValores(Objeto, 30);
+        return obtenerTopNValores(Objeto, 20);
     },
 
     "contarPalabra" : (bigData) => {
-        const allWords = []
-        bigData.forEach(msg => {
-            const palabras = msg.split(" ")
-        });
-        
+        const allWords = bigData.flatMap(
+            msg => msg.mensaje.split(/,| /)
+                .map(word => ((word.toLowerCase()).normalize('NFD').replace(/[\u0300-\u036f]/g, '')).replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,""))
+                .filter(Boolean)
+                .filter(word => word.length > 3 && word != "<multimedia" && word != "omitido>")
+        );
 
-        return obtenerTopNValores(Objeto, 30);
+        // Contar cuantas veces se repite cada palabra
+        const Objeto = {};
+        for (const word of allWords) {
+            Objeto[word] = (Objeto[word] || 1) + 1;
+        }
+
+        return obtenerTopNValores(Objeto, 15);
     }
 
 }
