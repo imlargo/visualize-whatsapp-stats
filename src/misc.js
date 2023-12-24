@@ -49,3 +49,22 @@ function getEmojis(raw) {
     const match = raw.match(/\p{Emoji}/gu);
     return match ? match[1] : "Nn";
 }
+
+let bigData = [];
+
+function loadFile(input) {
+    /*
+    * Cargar configuracion de formato del mapa y capas
+    * desde un archivo JSON y aplicarlo
+    */
+
+    const file = input.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+        const content = e.target.result;
+        bigData = loadData(content);
+        console.log("Data cargada")
+    };
+    reader.readAsText(file);
+}
