@@ -49,6 +49,16 @@ const dataFunctions = {
         }
 
         return obtenerTopNValores(Objeto, 30);
+    },
+
+    "contarPalabra" : (bigData) => {
+        const allWords = []
+        bigData.forEach(msg => {
+            const palabras = msg.split(" ")
+        });
+        
+
+        return obtenerTopNValores(Objeto, 30);
     }
 
 }
